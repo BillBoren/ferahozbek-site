@@ -1,0 +1,905 @@
+/* ==============================================
+   TABLE OF CONTENTS
+   ----------------------------------------------
+   1.  Base & Reset
+   2.  Layout & Containers
+   3.  Header & Navigation (Desktop)
+   4.  Navigation (Mobile)
+   5.  Typography & Elements
+   6.  Icon Styles (ET Modules)
+   7.  Content & Page Elements
+   8.  Footer Styles
+   9.  Responsive Queries
+============================================== */
+.F_I {float:right;margin-left:15px;margin-bottom:40px;width:30vw;height: auto;max-width:260px}
+
+/* ----------------------------------------------
+   1. Base & Reset
+---------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bitter', Georgia, "Times New Roman", serif;
+    color: #000;
+    background-color: #fff;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.7em;
+    word-wrap: break-word;
+    text-align: left;
+    font-size: 100%;
+    margin: 0;
+}
+
+.clearfix {
+    clear: both;
+}
+
+/* ----------------------------------------------
+   2. Layout & Containers
+---------------------------------------------- */
+.page-container {
+    width: 100%;
+}
+
+#page-content {
+    max-width: 1024px;
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+#page-container {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+/* ----------------------------------------------
+   3. Header & Navigation (Desktop)
+---------------------------------------------- */
+.site-header {
+    position: relative;              /* line 444 wins over sticky */
+    padding-left: 26px;              /* from line 66, still applies */
+    top: 0;                          /* from line 66, harmless with relative */
+    z-index: 9999;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;         /* line 444 wins over space-between */
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;              /* overrides just "padding-left" on left side */
+}
+.site-header::after,
+.site-header::before {
+    display: none;
+}
+
+#top-menu-nav {
+    flex: 0 1 auto;
+    display: inline-block;
+    line-height: 1.7em;
+    vertical-align: super;
+    height: 40px;
+}
+
+#top-menu-nav ul.nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+}
+
+.nav {
+    list-style: none;
+    margin: 0;           
+    padding: 0;
+    float: none;         
+    text-align: center;
+    z-index: 9999;      
+}
+
+.nav li {
+    float: left;
+    margin-right: 10px;
+    position: relative;
+}
+
+.nav a {
+    display: block;
+    padding: 5px;
+    color: black !important;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav a:hover {
+    color: #0063d1;
+    text-decoration: underline;
+}
+
+/* Dropdown Menus */
+.nav ul {
+    background-color: #fff;
+    background: rgba(255, 255, 255, 0);
+    list-style: none;
+    position: absolute;
+    left: -9999px;
+    z-index: 9999;
+}
+
+.nav ul li {
+    padding-top: 1px;
+    float: none;
+}
+
+.nav ul a {
+    white-space: nowrap;
+}
+
+.nav li:hover ul {
+    line-height: 1.7em;
+    display: block;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    white-space: normal;
+    max-width: 300px;
+    word-break: break-word;
+    width: 300px;
+}
+
+.nav li ul a {
+    margin-left: -30px;
+    background-color: black;
+    width: 300px;
+    word-break: break-word;
+    white-space: pre-wrap;
+    line-height: 1.7em;
+}
+
+.sub-menu {
+    margin-top: 15px;
+    background-color: black;
+}
+
+.nav li:hover ul a {
+    text-decoration: none !important;
+    background-color: black;
+    width: 200px;
+    margin-left: -30px;
+}
+
+.submenu {
+    margin-right: 15px;
+}
+#social-bar {
+    background: black;
+    display: inline-block;   
+    width: 100%;             
+}
+
+#et-info {
+    float: left;
+    display: block;
+    padding: 8px 0;
+    line-height: 1em;
+}
+
+#et-info-email {
+    color: #fff;
+    margin-right: 13px;
+    position: relative;
+}
+
+#et-info-email::before {
+    text-shadow: 0 0;
+    font-family: ETmodules !important;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+    text-transform: none;
+    speak: none;
+    margin-right: 4px;
+    content: "\e076";
+}
+
+.logo_container {
+    width: 100%;
+    margin: 0 0 15px 0;
+    text-align: center;
+}
+
+.logo_container picture,
+.logo_container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Navigation wrapper - centered */
+#top-menu-nav {
+    display: block;
+    margin: 0 auto;
+    line-height: 1.7em;
+}
+
+/* Navigation menu - centered items */
+#top-menu-nav ul.nav {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.nav li {
+    float: none;
+    display: inline-block;
+    margin-right: 0;
+    position: relative;
+}
+
+.nav a {
+    display: block;
+    padding: 8px 12px;
+    color: black !important;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nav a:hover {
+    color: #0063d1 !important;
+    text-decoration: underline;
+}
+
+/* Dropdown menus */
+.nav ul {
+    background-color: #fff;
+    list-style: none;
+    position: absolute;
+    left: -9999px;
+    z-index: 9999;
+    padding: 0;
+    margin: 0;
+}
+
+.nav ul li {
+    padding-top: 1px;
+    float: none;
+    display: block;
+}
+
+.nav ul a {
+    white-space: nowrap;
+    background-color: black;
+    color: white !important;
+}
+
+.nav li:hover ul {
+    display: block;
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: normal;
+    min-width: 220px;
+    width: auto;
+}
+
+.nav li ul a {
+    width: 100%;
+    word-break: break-word;
+    white-space: normal;
+    line-height: 1.7em;
+}
+
+.nav li:hover ul a {
+    text-decoration: none !important;
+    background-color: black;
+}
+
+/* Mobile menu adjustments */
+@media only screen and (max-width: 850px) {
+    .site-header {
+        justify-content: flex-end;
+        padding: 10px;
+    }
+.td-h4 {font-size:10pt;text-align: center;}
+.size-medium {width : 25vw;}
+.h2-mobil {font-size:1em;}
+.F_I {float:right;margin-left:15px;margin-bottom:40px;width:30vw;height: auto;}
+.icon-image {width:75px;text-align: center; }
+    .nav {
+        display: none;
+    }
+    
+    #et_mobile_nav_menu {
+        display: block;
+    }
+    
+    #top-menu-nav {
+        width: 100%;
+        text-align: right;
+    }
+}
+#top-header {
+    background-color: #000;
+    width: 100%;
+    z-index: 100000;
+    color: #fff;
+    font-size: 12px;
+}
+
+
+#et-info {
+    float: left;
+    display: block;
+    padding: 8px 0;
+    line-height: 1em;
+}
+
+#et-info-email {
+    color: #fff;
+    margin-right: 13px;
+    position: relative;
+}
+/* Navigation wrapper - centered */
+#top-menu-nav {
+    display: block;
+    margin: 0 auto;
+    line-height: 1.7em;
+}
+
+/* Navigation menu - centered items */
+#top-menu-nav ul.nav {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: none;
+    text-align: center;
+}
+
+.nav li {
+    float: none;
+    display: inline-block;
+    margin-right: 0;
+    position: relative;
+}
+
+.nav a {
+    display: block;
+    padding: 8px 12px;
+    color: black !important;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nav a:hover {
+    color: #0063d1 !important;
+    text-decoration: underline;
+}
+
+/* Dropdown menus */
+.nav ul {
+    background-color: #fff;
+    list-style: none;
+    position: absolute;
+    left: -9999px;
+    z-index: 9999;
+    padding: 0;
+    margin: 0;
+}
+
+.nav ul li {
+    padding-top: 1px;
+    float: none;
+    display: block;
+}
+
+.nav ul a {
+    white-space: nowrap;
+    background-color: black;
+    color: white !important;
+}
+
+.nav li:hover ul {
+    display: block;
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: normal;
+    min-width: 220px;
+    width: auto;
+}
+
+.nav li ul a {
+    width: 100%;
+    word-break: break-word;
+    white-space: normal;
+    line-height: 1.7em;
+}
+
+.nav li:hover ul a {
+    text-decoration: none !important;
+    background-color: black;
+}
+
+/* Mobile menu adjustments */
+@media only screen and (max-width: 850px) {
+    .site-header {
+        justify-content: flex-end;
+        padding: 10px;
+    }
+    
+    .nav {
+        display: none;
+    }
+    
+    #et_mobile_nav_menu {
+        display: block;
+    }
+    
+    #top-menu-nav {
+        width: 100%;
+        text-align: right;
+    }
+}
+/* Top Header Bar (Social/Contact) */
+.et_fixed_nav #top-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    line-height: 1em;
+    transition: background-color .4s, transform .4s, opacity .4s ease-in-out;
+    z-index: 100000;
+    color: #fff;
+    font-size: 12px;
+}
+
+#et-info {
+    float: left;
+    display: block;
+    padding-bottom: .75em;
+    line-height: 1em;
+}
+
+#et-info-phone {
+    color: #fff;
+    margin-right: 13px;
+    position: relative;
+}
+
+#top-header a {
+    text-decoration: none;
+    color: white;
+}
+#top-header .container {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 30px;
+    padding-left: 30px;
+    font-size: 12px;
+    height: 30px;
+}
+
+
+#et-secondary-menu {
+    display: none;
+}
+
+/* ----------------------------------------------
+   4. Navigation (Mobile)
+---------------------------------------------- */
+.mobile_menu_bar {
+    display: block;
+    position: relative;
+    line-height: 0;
+    padding-bottom: 24px;
+    border: 0;
+    outline: 0;
+    background: 0 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+}
+
+.mobile_menu_bar::before {
+    text-shadow: 0 0;
+    font-family: ETmodules !important;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+    text-transform: none;
+    speak: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    font-size: 32px;
+    content: "\61";
+    cursor: pointer;
+    color: #000000;
+}
+
+.et_mobile_menu {
+    max-width: 300px;
+    display: none;
+    visibility: visible;
+    z-index: 9999;
+    left: 0;
+    width: 100%;
+    padding: 5%;
+    border-top: 3px solid #2ea3f2;
+    border-top-color: rgb(46, 163, 242);
+    opacity: 1;
+    background: #fff;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+}
+
+.et_mobile_menu li a {
+    display: block;
+    padding: 10px 5%;
+    border-bottom: 1px solid rgba(0, 0, 0, .03);
+    color: #000000;
+    font-size: 14px;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.mobile-sub-menu {
+    background-color: #fff;
+}
+
+#et_mobile_nav_menu {
+    display: none;
+}
+
+/* ----------------------------------------------
+   5. Typography & Elements
+---------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bitter', Georgia, "Times New Roman", serif;
+    color: black;
+    padding-bottom: 10px;
+    color: #333;
+    font-weight: 500;
+    line-height: 1em;
+}
+h1 {
+    font-size: 30px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 26px;
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.td-pad {
+    padding: 6%;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+hr {
+    color: #000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* ----------------------------------------------
+   6. Icon Styles (ETmodules)
+---------------------------------------------- */
+.et-waypoint {
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: ETmodules;
+    font-size: 46px;
+    font-weight: 300;
+    font-style: normal;
+    font-variant: normal;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1;
+    text-transform: none;
+    content: attr(data-icon);
+    speak: none;
+    padding: 25px;
+    border-radius: 100px;
+    border: 2px solid;
+}
+
+.et-pb-icon {
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: ETmodules;
+    font-size: 56px;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: normal;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1;
+    text-transform: none;
+    content: attr(data-icon);
+    speak: none;
+}
+
+.et-pb-icon-circle-border {
+    border: 3px solid;
+}
+
+.et-pb-icon-circle {
+    padding: 25px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    font-size: 48px;
+}
+
+.et_pb_blurb_0 .et-pb-icon {
+    color: #000000;
+    background-color: #ffffff;
+    border-color: #000000;
+}
+
+/* Social Icons */
+.et-social-twitter a.icon::before {
+    content: "\e094";
+}
+
+.et-social-rss a.icon::before {
+    content: "\e09e";
+}
+
+.et-social-linkedin a.icon::before {
+    content: "\e09d";
+}
+
+a.icon::before {
+    font-family: ETmodules;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-transform: none;
+}
+
+#et-info-phone::before {
+    position: relative;
+    top: 2px;
+    margin-right: 2px;
+    content: "\e090";
+    text-shadow: 0 0;
+    font-family: ETmodules !important;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: normal;
+}
+
+/* ----------------------------------------------
+   7. Content & Page Elements
+---------------------------------------------- */
+
+.icon-td {
+    text-align: center;
+}
+
+#dl-image {
+    max-width: 280px;
+    width: 25vw;
+    display: inline-block;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    background-color: white;
+}
+
+#dl-guide {
+    max-width: 250px;
+    width: 20vw;
+    float: right;
+    text-align: center;
+    background-color: #d7d3d3;
+}
+
+/* ----------------------------------------------
+   8. Footer Styles
+---------------------------------------------- */
+#main-footer {
+    background-color: #fff;
+    color: #000;
+    display: inline-block;
+    position: relative;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: auto;
+}
+
+#et-footer-nav {
+    background-color: rgba(255, 255, 255, .05);
+    background-color: #fff;
+    color: #fff;
+}
+
+.bottom-nav {
+    padding: 15px 0;
+    list-style: none;
+}
+
+.bottom-nav li {
+    display: inline-block;
+    padding-right: 22px;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.bottom-nav a {
+    color: #bbb;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    text-decoration: none;
+}
+
+.footer-container {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#footer-bottom {
+    background-color: #000000;
+    color: #fff;
+}
+
+#footer-bottom a {
+    color: #ddd;
+}
+
+.is-foot {
+    line-height: 1.4;
+    color: #bbb;
+    display: inline-block;
+    font-size: 13px;
+    text-align: center;
+    width: 100%;
+}
+
+.social-div {
+    float: right;
+    margin-right: 10%;
+    margin-top: -3.5em;
+}
+
+.bt-social-icons {
+    float: right;
+    -webkit-padding-start: 0;
+}
+
+.bt-social-icons li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.bt-social-icon a {
+    display: inline-block;
+    position: relative;
+    color: #666;
+    font-size: 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: color 300ms ease 0s;
+}
+
+.bt-social-icon span {
+    display: none;
+}
+
+/* Footer Social Icons */
+.bt-social-facebook a.icon::before { content: "\e093"; font-family: ETmodules; }
+.bt-social-twitter a.icon::before { content: "\e094"; font-family: ETmodules; }
+.bt-social-google-plus a.icon::before { content: "\e096"; font-family: ETmodules; }
+.bt-social-rss a.icon::before { content: "\e09e"; font-family: ETmodules; }
+.bt-social-pinterest a.icon::before { content: "\e095"; font-family: ETmodules; }
+.bt-social-linkedin a.icon::before { content: "\e09d"; font-family: ETmodules; }
+.bt-social-instagram a.icon::before { content: "\e09a"; font-family: ETmodules; }
+.bt-social-youtube a.icon::before { content: "\e0a3"; font-family: ETmodules; }
+
+/* ----------------------------------------------
+   9. Responsive Queries
+---------------------------------------------- */
+
+
+
+@media only screen and (max-width: 924px) {
+    .social-div {
+        float: none;
+        margin-top: 0;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    #dl-image {
+        max-width: 100%;
+        width: auto;
+        display: inline-block;
+        padding: 15px;
+        background-color: white;
+    }
+    
+    #dl-guide {
+        float: none !important;
+        width: auto;
+        padding: 15px;
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .et-pb-icon {
+        font-size: 36px;
+    }
+    
+   #page-container {
+    position: relative !important;
+    top: auto !important;
+} 
+    .nav {
+        display: none;
+    }
+    
+    #et_mobile_nav_menu {
+        display: block;
+    }
+    
+    #top-menu-nav {
+        float: right;
+        margin-right: 3%;
+    }
+    
+    #mobile_menu {
+        display: none;
+    }
+}
+
