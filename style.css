@@ -11,6 +11,11 @@
    8.  Footer Styles
    9.  Responsive Queries
 ============================================== */
+.site-wrapper {
+    max-width: 1295px;
+    margin: 0 auto;
+    width: 100%;
+}
 .F_I {float:right;margin-left:15px;margin-bottom:40px;width:30vw;height: auto;max-width:260px}
 
 /* ----------------------------------------------
@@ -49,8 +54,7 @@ body {
 #page-content {
     max-width: 1024px;
     width: 80%;
-    margin-right: 10%;
-    margin-left: 10%;
+    margin: 0 auto;
 }
 
 #page-container {
